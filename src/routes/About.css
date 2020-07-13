@@ -10,11 +10,11 @@
   font-weight: 300;
 }
 
-.about__containerspan: first-child {
+.about__container span:first-child {
   font-size: 20px;
 }
 
-.about__containerspan: last-child {
+.about__container span:last-child {
   display: block;
   margin-top: 10px;
 }
