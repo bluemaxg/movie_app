@@ -1,33 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import "./App.css";
+import { HashRouter, Route } from "react-router-dom";
+import About from "./routes/About";
+import Home from "./routes/Home";
+import Navigation from "./components/Navigation";
+import Detail from "./routes/Detail";
 
-class App extends React.Component {
-    state = {
-        count: 0,
-    };
-
-    add = () => {
-        this.setState(current => ({ count: current.count + 1 }));
-    };
-
-    minus = () => {
-        this.setState(current => ({ count: current.count - 1 }));
-    };
-
-    mul = () => {
-        this.setState(current => ({ count: current.count * 2 }));
-    };
-
-    render() {
-        return (
-            <div>
-                <h1>The number is: {this.state.count}</h1>
-                <button onClick={this.add}>Add</button>
-                <button onClick={this.minus}>Minus</button>
-                <button onClick={this.mul}>Mul</button>
-            </div>
-        );
-    }
+function App() {
+  return (
+    <HashRouter>
+      <Navigation />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/movie-detail" component={Detail} />
+    </HashRouter>
+  );
 }
 
 export default App;
